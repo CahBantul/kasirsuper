@@ -14,7 +14,7 @@ class _SplashPageState extends State<SplashPage> {
   void initState() {
     Future.delayed(const Duration(seconds: 2)).then((value) =>
         Navigator.pushNamedAndRemoveUntil(
-            context, HomePage.routeName, (route) => false));
+            context, MainPage.routeName, (route) => false));
     super.initState();
   }
 
