@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kasirsuper/core/core.dart';
+import 'package:kasirsuper/feature/home/home.dart';
 import 'package:kasirsuper/feature/settings/settings.dart';
 
 class MyApp extends StatelessWidget {
@@ -13,6 +14,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: LigthTheme(AppColor.green).theme,
       home: const SplashPage(),
+      routes: {
+        '/home': (context){
+          return const HomePage();
+        }
+      },
     );
   }
 }
