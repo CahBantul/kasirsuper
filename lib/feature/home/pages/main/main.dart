@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kasirsuper/core/core.dart';
-import 'package:kasirsuper/core/preferences/preferences.dart';
+
+part 'sections/card_section.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -17,30 +18,23 @@ class HomePage extends StatelessWidget {
           padding: const EdgeInsets.all(Dimens.defaultSize),
           child: Column(
             children: [
-              Card(
-                child: Padding(
-                  padding: EdgeInsets.all(Dimens.dp24),
-                  child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        const RegularText("Total Penjualan"),
-                        Dimens.dp4.height,
-                        const HeadingText(
-                          "Rp. 5.000.000.000",
-                          style: TextStyle(fontSize: Dimens.dp24),
-                        ),
-                        Dimens.dp6.height,
-                        RegularText.semiBold(
-                          "Lihat Detail",
-                          style: TextStyle(
-                              fontSize: Dimens.dp12,
-                              color: context.theme.primaryColor),
-                        ),
-                      ]),
-                ),
-              )
+              const _CardSection(
+                title: 'Total Penjualan',
+                value: 'Rp. 5.000.000.000',
+              ),
+              Dimens.defaultSize.height,
+              const _CardSection(
+                title: 'Total Transaksi',
+                value: '300.000',
+              ),
+              Dimens.defaultSize.height,
+              const _CardSection(
+                title: 'Total Produk',
+                value: '654',
+              ),
             ],
           )),
     );
   }
 }
+

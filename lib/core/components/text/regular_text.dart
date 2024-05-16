@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:kasirsuper/core/components/components.dart';
 import 'package:kasirsuper/core/core.dart';
 
 class RegularText extends StatelessWidget {

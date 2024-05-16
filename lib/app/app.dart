@@ -1,7 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:kasirsuper/app/routes.dart';
 import 'package:kasirsuper/core/core.dart';
-import 'package:kasirsuper/feature/home/home.dart';
 import 'package:kasirsuper/feature/settings/settings.dart';
 
 class MyApp extends StatelessWidget {
@@ -15,20 +14,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: LigthTheme(AppColor.green).theme,
       home: const SplashPage(),
-      onGenerateRoute:(settings) {
-        switch (settings.name) {
-          case HomePage.routeName:
-            return CupertinoPageRoute(builder: (context){
-              return const HomePage();
-            });
-          default:
-          return CupertinoPageRoute(builder: (context){
-            return const Scaffold(
-              body: Center(child: HeadingText('Not Found!'))
-            );
-          });
-        }
-      },
+      onGenerateRoute: routes
     );
   }
 }

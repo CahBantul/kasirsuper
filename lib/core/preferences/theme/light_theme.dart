@@ -55,6 +55,7 @@ class LigthTheme {
 
   CardTheme get cardTheme => CardTheme(
       elevation: 0,
+      margin: EdgeInsets.zero,
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(Dimens.dp8),
           side: BorderSide(color: borderColor)));
