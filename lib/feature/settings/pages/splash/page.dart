@@ -12,8 +12,9 @@ class SplashPage extends StatefulWidget {
 class _SplashPageState extends State<SplashPage> {
   @override
   void initState() {
-    Future.delayed(const Duration(seconds: 3)).then((value) =>
-        Navigator.pushNamedAndRemoveUntil(context, HomePage.routeName, (route) => false));
+    Future.delayed(const Duration(seconds: 2)).then((value) =>
+        Navigator.pushNamedAndRemoveUntil(
+            context, HomePage.routeName, (route) => false));
     super.initState();
   }
 
@@ -26,10 +27,13 @@ class _SplashPageState extends State<SplashPage> {
         children: [
           Image.asset(
             MainAssets.logo,
-            width: MediaQuery.of(context).size.width / 2,
+            width: Dimens.width(context) / 2,
           ),
-          16.0.height,
-          const HeadingText('Kasir Super'),
+          Dimens.dp16.height,
+          HeadingText(
+            'Kasir Super',
+            style: TextStyle(color: context.theme.primaryColor),
+          ),
         ],
       ),
     ));

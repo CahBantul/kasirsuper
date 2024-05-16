@@ -45,8 +45,8 @@ class AppColor {
     800: Color(0xff333333),
   });
 
-  static const white = MaterialColor(0xffE0E0E0, {
-    200: Color(0xffFAFAFA),
+  static const white = MaterialColor(0xffFAFAFA, {
+    500: Color(0xffE0E0E0),
     400: Color(0xffF5F5F5),
     600: Color(0xffCCCCCC),
     800: Color(0xffB8B8B8),
