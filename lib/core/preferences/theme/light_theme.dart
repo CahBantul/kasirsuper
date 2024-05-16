@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:kasirsuper/core/core.dart';
 
 class LigthTheme {
@@ -9,6 +10,7 @@ class LigthTheme {
   final Color scafoldColor = AppColor.white;
   final Color textSolidColor = AppColor.black;
   final Color borderColor = AppColor.white[500]!;
+  final Color disableColor = AppColor.black[200]!;
 
   TextTheme get textTheme => TextTheme(
         headlineLarge: TextStyle(
@@ -59,18 +61,26 @@ class LigthTheme {
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(Dimens.dp8),
           side: BorderSide(color: borderColor)));
-  
+
   AppBarTheme get appBarTheme => const AppBarTheme();
+
+  BottomNavigationBarThemeData get bottomNavigationBarThemeData =>
+      BottomNavigationBarThemeData(
+          type: BottomNavigationBarType.fixed,
+          selectedItemColor: primaryColor,
+          unselectedItemColor: disableColor);
 
   ThemeData get theme {
     return ThemeData(
-        colorScheme: ColorScheme.light(
-            primary: primaryColor, secondary: primaryColor, error: errorColor),
-        scaffoldBackgroundColor: scafoldColor,
-        useMaterial3: true,
-        fontFamily: 'Poppins',
-        textTheme: textTheme,
-        appBarTheme: appBarTheme,
-        cardTheme: cardTheme);
+      colorScheme: ColorScheme.light(
+          primary: primaryColor, secondary: primaryColor, error: errorColor),
+      scaffoldBackgroundColor: scafoldColor,
+      useMaterial3: true,
+      fontFamily: 'Poppins',
+      textTheme: textTheme,
+      appBarTheme: appBarTheme,
+      cardTheme: cardTheme,
+      bottomNavigationBarTheme: bottomNavigationBarThemeData,
+    );
   }
 }
