@@ -12,12 +12,16 @@ class __FilterSectionState extends State<_FilterSection> {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        _buildContainer(context, label: 'Done'),
-        Dimens.dp16.width,
-        _buildContainer(context, label: 'Draft'),
-      ],
+    return SingleChildScrollView(
+      padding: const EdgeInsets.all(Dimens.defaultSize),
+      scrollDirection: Axis.horizontal,
+      child: Row(
+        children: [
+          _buildContainer(context, label: 'Done'),
+          Dimens.dp16.width,
+          _buildContainer(context, label: 'Draft'),
+        ],
+      ),
     );
   }
 
