@@ -8,7 +8,9 @@ class LigthTheme {
   final Color errorColor = AppColor.red;
   final Color scafoldColor = AppColor.white;
   final Color textSolidColor = AppColor.black;
+  final Color textDisabledColor = AppColor.black[400]!;
   final Color borderColor = AppColor.white[500]!;
+  final Color inputColor = AppColor.white[400]!;
   final Color disableColor = AppColor.black[200]!;
 
   TextTheme get textTheme => TextTheme(
@@ -50,7 +52,7 @@ class LigthTheme {
         labelMedium: TextStyle(
           fontSize: Dimens.dp12,
           fontWeight: FontWeight.w600,
-          color: textSolidColor,
+          color: textDisabledColor,
         ),
       );
 
@@ -68,28 +70,57 @@ class LigthTheme {
           type: BottomNavigationBarType.fixed,
           selectedItemColor: primaryColor,
           unselectedItemColor: disableColor);
-  
+
   ElevatedButtonThemeData get elevatedButtonTheme {
     return ElevatedButtonThemeData(
-        style: ElevatedButton.styleFrom(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(Dimens.dp8),
-            ),
-            backgroundColor: primaryColor,
-            foregroundColor: scafoldColor,
-            textStyle: textTheme.titleMedium),
-      );
+      style: ElevatedButton.styleFrom(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(Dimens.dp8),
+          ),
+          backgroundColor: primaryColor,
+          foregroundColor: scafoldColor,
+          textStyle: textTheme.titleMedium),
+    );
   }
 
   OutlinedButtonThemeData get outlinedButtonTheme {
     return OutlinedButtonThemeData(
-        style: OutlinedButton.styleFrom(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(Dimens.dp8),
-            ),
-            backgroundColor: primaryColor,
-            foregroundColor: scafoldColor,
-            textStyle: textTheme.titleMedium),
+      style: OutlinedButton.styleFrom(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(Dimens.dp8),
+          ),
+          backgroundColor: primaryColor,
+          foregroundColor: scafoldColor,
+          textStyle: textTheme.titleMedium),
+    );
+  }
+
+  InputDecorationTheme get inputDecorationTheme {
+    return InputDecorationTheme(
+        fillColor: inputColor,
+        filled: true,
+        hintStyle: textTheme.labelMedium,
+        prefixIconColor: textDisabledColor,
+        contentPadding: const EdgeInsets.symmetric(
+          horizontal: Dimens.defaultSize,
+          vertical: Dimens.dp12,
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(Dimens.dp8),
+          borderSide: BorderSide(color: inputColor),
+        ),
+        disabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(Dimens.dp8),
+          borderSide: BorderSide(color: textDisabledColor),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(Dimens.dp8),
+          borderSide: BorderSide(color: primaryColor),
+        ),
+        errorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(Dimens.dp8),
+          borderSide: BorderSide(color: errorColor),
+        ),
       );
   }
 
@@ -105,7 +136,8 @@ class LigthTheme {
       cardTheme: cardTheme,
       bottomNavigationBarTheme: bottomNavigationBarThemeData,
       elevatedButtonTheme: elevatedButtonTheme,
-      outlinedButtonTheme: outlinedButtonTheme, 
+      outlinedButtonTheme: outlinedButtonTheme,
+      inputDecorationTheme: inputDecorationTheme,
     );
   }
 }

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:kasirsuper/core/components/input/input.dart';
 import 'package:kasirsuper/core/core.dart';
 
 part 'sections/item_section.dart';
+
 class ProductPage extends StatelessWidget {
   const ProductPage({super.key});
 
@@ -12,7 +14,15 @@ class ProductPage extends StatelessWidget {
         title: const Text('Produk'),
       ),
       body: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
-        const SubtitleText('3 Product'),
+        const Padding(
+          padding: EdgeInsets.all(Dimens.defaultSize),
+          child: SearchInput(
+            hintText: 'Search by product name or SKU',
+          ),
+        ),
+        const Padding(
+            padding: EdgeInsets.all(Dimens.defaultSize),
+            child: SubtitleText('3 Product')),
         Expanded(
           child: ListView.separated(
             itemBuilder: ((context, index) {
