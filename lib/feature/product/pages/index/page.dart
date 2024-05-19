@@ -19,7 +19,7 @@ class ProductPage extends StatelessWidget {
               return const _ItemSection();
             }),
             separatorBuilder: (context, index) {
-              return Dimens.dp40.height;
+              return Dimens.dp16.height;
             },
             itemCount: 3,
           ),

@@ -68,6 +68,30 @@ class LigthTheme {
           type: BottomNavigationBarType.fixed,
           selectedItemColor: primaryColor,
           unselectedItemColor: disableColor);
+  
+  ElevatedButtonThemeData get elevatedButtonTheme {
+    return ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(Dimens.dp8),
+            ),
+            backgroundColor: primaryColor,
+            foregroundColor: scafoldColor,
+            textStyle: textTheme.titleMedium),
+      );
+  }
+
+  OutlinedButtonThemeData get outlinedButtonTheme {
+    return OutlinedButtonThemeData(
+        style: OutlinedButton.styleFrom(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(Dimens.dp8),
+            ),
+            backgroundColor: primaryColor,
+            foregroundColor: scafoldColor,
+            textStyle: textTheme.titleMedium),
+      );
+  }
 
   ThemeData get theme {
     return ThemeData(
@@ -80,6 +104,8 @@ class LigthTheme {
       appBarTheme: appBarTheme,
       cardTheme: cardTheme,
       bottomNavigationBarTheme: bottomNavigationBarThemeData,
+      elevatedButtonTheme: elevatedButtonTheme,
+      outlinedButtonTheme: outlinedButtonTheme, 
     );
   }
 }
